@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import com.example.test.MainActivity
 import com.example.test.R
 
 class CartActivity : AppCompatActivity() {

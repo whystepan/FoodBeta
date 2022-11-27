@@ -1,4 +1,4 @@
-package com.example.test
+package com.example.test.UI
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import android.util.Log
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.test.UI.CartActivity
+import com.example.test.*
 import com.google.android.material.tabs.TabLayout
 import retrofit2.Call
 import retrofit2.Callback

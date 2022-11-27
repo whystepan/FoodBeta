@@ -1,14 +1,17 @@
-package com.example.test
+package com.example.test.UI
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.test.ProfileClass
+import com.example.test.R
+import com.example.test.RetrofitClient
+import com.example.test.RetrofitServices
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Call
