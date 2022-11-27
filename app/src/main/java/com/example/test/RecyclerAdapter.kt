@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.test.UI.DishActivity
 import com.squareup.picasso.Picasso
 
-class RecyclerAdapter (private val dishes: List<DishesClass>):RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter (private val dishes: ArrayList<DishesClass>):RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val tvNameItem: TextView = itemView.findViewById(R.id.tvNameItem)

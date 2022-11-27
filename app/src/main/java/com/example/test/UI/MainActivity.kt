@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
 
     }
     fun updateRecyclerView(dishes: ArrayList<DishesClass>){
-        rViewMain?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        rViewMain?.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
         val recyclerAdapter = RecyclerAdapter(dishes)
         rViewMain?.adapter = recyclerAdapter
     }
