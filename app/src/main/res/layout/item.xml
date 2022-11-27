@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bgItem"
+    android:layout_width="180dp"
+    android:layout_height="286dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardItem"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="#F3F3F3"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvNameItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/light"
+        android:gravity="center"
+        android:text="Еда"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/cardItem"
+        app:layout_constraintEnd_toEndOf="@+id/cardItem"
+        app:layout_constraintStart_toStartOf="@+id/cardItem"
+        app:layout_constraintTop_toBottomOf="@+id/imItem"
+        app:layout_constraintVertical_bias="0.22000003" />
+
+    <TextView
+        android:id="@+id/tvRubItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:text="1400 руб."
+        android:textColor="@color/shpurp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameItem" />
+
+    <ImageView
+        android:id="@+id/imItem"
+        android:layout_width="122dp"
+        android:layout_height="122dp"
+        android:background="@drawable/imshape"
+        android:elevation="5dp"
+        android:scaleType="centerCrop"
+        app:circularflow_defaultRadius="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.100000024"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

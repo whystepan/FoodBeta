@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="46dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_cart" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/bold"
+        android:text="Алярм. Еда."
+        android:textSize="28dp"
+        app:layout_constraintStart_toStartOf="@+id/imCart"
+        app:layout_constraintTop_toBottomOf="@+id/imCart" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="420dp"
+        android:background="@drawable/btnshape"
+        android:backgroundTint="@color/shgray"
+        android:searchIcon="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.16" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tbMain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/shcad"
+        app:tabIndicatorFullWidth="false"
+        app:tabMode="auto">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tbFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contextClickable="false"
+            android:text="Еда" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tbDrink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Напитки" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tvShawa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Шаурма" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tbSushi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Суши" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <HorizontalScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbMain"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rViewMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </HorizontalScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

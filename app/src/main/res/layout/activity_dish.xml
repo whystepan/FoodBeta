@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.DishActivity">
+
+    <ImageView
+        android:id="@+id/imLeftDish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="46dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_exitleft" />
+
+    <ImageView
+        android:id="@+id/imHeartDish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_heart" />
+
+    <TextView
+        android:id="@+id/imCartDish"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="46dp"
+        android:background="@drawable/btnshape"
+        android:backgroundTint="@color/shpurp"
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+        android:text="В корзину"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imItemDish"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/imshape"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/noimage"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvNameDish"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/light"
+        android:gravity="center"
+        android:text="Еда, чо сказать"
+        android:textColor="@color/shcad"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imItemDish" />
+
+    <TextView
+        android:id="@+id/tvPriceDish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+        android:text="999 руб."
+        android:textColor="@color/shpurp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvNameDish"
+        app:layout_constraintStart_toStartOf="@+id/tvNameDish"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameDish" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/light"
+        android:text="Описание"
+        android:textColor="@color/shcad"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPriceDish" />
+
+    <TextView
+        android:id="@+id/tvDescDish"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="56dp"
+        android:fontFamily="@font/light"
+        android:text="Описание блюда"
+        android:textColor="@color/shcad"
+        app:layout_constraintBottom_toTopOf="@+id/imCartDish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+</androidx.constraintlayout.widget.ConstraintLayout>
