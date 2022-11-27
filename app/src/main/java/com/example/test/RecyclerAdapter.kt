@@ -28,9 +28,10 @@ class RecyclerAdapter (private val dishes: ArrayList<DishesClass>):RecyclerView.
 
         val bgItem: ConstraintLayout = itemView.findViewById(R.id.bgItem)
         bgItem.setOnClickListener{
-            val intent = Intent(parent.context, DishActivity::class.java)
-            intent.putExtra("id", bgItem.tag.toString())
-            parent.context.startActivity(intent)
+            val intentCon = Intent(parent.context, DishActivity::class.java)
+            intentCon.putExtra("" +
+                    "id", bgItem.tag.toString())
+            parent.context.startActivity(intentCon)
         }
         return ViewHolder(itemView)
     }
