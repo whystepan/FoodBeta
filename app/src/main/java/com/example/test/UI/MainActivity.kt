@@ -1,10 +1,12 @@
 package com.example.test.UI
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.test.*
@@ -28,8 +30,18 @@ class MainActivity : AppCompatActivity() {
         imCart = findViewById(R.id.imCart)
         rViewMain = findViewById(R.id.rViewMain)
 
+        val imExit: ImageView = findViewById(R.id.imExit)
+        val prefs = getSharedPreferences("token", Context.MODE_PRIVATE)
+        imExit.setOnClickListener{
+            prefs.edit().remove("token").apply()
+            val intent = Intent(this@MainActivity, LaunchActivity::class.java)
+            startActivity(intent)
+            this@MainActivity.finish()
+        }
+
         imCart.setOnClickListener{
             val intent = Intent(this@MainActivity, CartActivity::class.java)
+            intent.putExtra("token", intent.getStringExtra("token"))
             startActivity(intent)
             this@MainActivity.finish()
         }
@@ -45,11 +57,6 @@ class MainActivity : AppCompatActivity() {
             ) {
                 updateRecyclerView(filterByCategory(response.body()!!, "Еда")) // фильтр при запуске (на еду)
                 dishes = response.body()!! // крафтим глобальный список продуктов
-
-                for (dish in response.body()!!){
-                    Log.e("Алярм", dish.namedish)
-                }
-                Log.e("Алярм", "аля?") // Вывод ошибки в Logcat
             }
 
             override fun onFailure(call: Call<ArrayList<DishesClass>>, t: Throwable) {

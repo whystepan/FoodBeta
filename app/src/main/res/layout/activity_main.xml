@@ -10,9 +10,9 @@
         android:id="@+id/imCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="46dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_cart" />
 
@@ -20,18 +20,19 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="46dp"
         android:fontFamily="@font/bold"
-        android:text="Алярм. Еда."
+        android:text="DFood"
         android:textSize="28dp"
-        app:layout_constraintStart_toStartOf="@+id/imCart"
-        app:layout_constraintTop_toBottomOf="@+id/imCart" />
+        app:layout_constraintStart_toStartOf="@+id/imExit"
+        app:layout_constraintTop_toBottomOf="@+id/imExit" />
 
     <SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/searchMain"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="420dp"
         android:background="@drawable/btnshape"
@@ -47,10 +48,10 @@
         android:id="@+id/tbMain"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:layout_constraintTop_toBottomOf="@+id/searchMain"
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/shcad"
         app:tabIndicatorFullWidth="false"
@@ -87,23 +88,21 @@
         android:id="@+id/rViewMain"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbMain" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:background="@android:color/transparent"
-        app:elevation="0dp"
-        app:labelVisibilityMode="unlabeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <ImageView
+        android:id="@+id/imExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="46dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/btmenu" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_exit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import com.example.test.R
 
 class LaunchActivity : AppCompatActivity() {
@@ -22,12 +23,14 @@ class LaunchActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 val token = prefs.getString("token", "")
+                Log.e("Алярм", token.toString())
                 if (token == "") {
                     val intent = Intent(this@LaunchActivity, SignActivity::class.java)
                     startActivity(intent)
                     this@LaunchActivity.finish()
                 } else {
                     val intent = Intent(this@LaunchActivity, MainActivity::class.java) // кидаем моменталочку в main
+                    intent.putExtra("token", token)
                     startActivity(intent)
                     this@LaunchActivity.finish()
                 }

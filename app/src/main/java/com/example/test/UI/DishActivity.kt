@@ -1,12 +1,16 @@
 package com.example.test.UI
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.example.test.*
 import com.squareup.picasso.Picasso
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,11 +32,33 @@ class DishActivity : AppCompatActivity() {
         val tvNameDish: TextView = findViewById(R.id.tvNameDish) // Навзание блюда
         val tvPriceDish: TextView = findViewById(R.id.tvPriceDish) // Ценник
         val tvDescDish: TextView = findViewById(R.id.tvDescDish) // Описание
+        val imCartDish: TextView = findViewById(R.id.imCartDish) // Добавить в корзину
         imHeartDish = findViewById(R.id.imHeartDish)
+
 
         val retrofitServices: RetrofitServices =
             RetrofitClient.getClient("http://79.137.206.73/") // API Сервер
                 .create(RetrofitServices::class.java)
+
+        val prefs = getSharedPreferences("token", Context.MODE_PRIVATE)
+        Log.e("Алярм", prefs.getString("token", "")!!)
+        Log.e("Алярм", dish_id.toString())
+        imCartDish.setOnClickListener{
+            retrofitServices.addcart(prefs.getString("token", "")!!.toInt(), dish_id!!.toInt()).enqueue(object: Callback<ResponseBody>{
+                override fun onResponse(
+                    call: Call<ResponseBody>,
+                    response: Response<ResponseBody>
+                ) {
+                    Log.e("Алярм", response.code().toString())
+                    Toast.makeText(this@DishActivity, "В корзине", Toast.LENGTH_LONG).show()
+                }
+
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    Toast.makeText(this@DishActivity, "Каво", Toast.LENGTH_LONG).show()
+                }
+
+            })
+        }
 
         retrofitServices.getdish(dish_id!!.toInt()).enqueue(object: Callback<DishesClass>{
             override fun onResponse(call: Call<DishesClass>, response: Response<DishesClass>) {
