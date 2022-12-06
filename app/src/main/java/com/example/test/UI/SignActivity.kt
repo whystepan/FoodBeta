@@ -38,12 +38,12 @@ class SignActivity : AppCompatActivity() {
 
         tvLoginSi.setOnClickListener {
             if (edSignEmail.text.isEmpty() || edSignPass.text.isEmpty()) { // Проверка на пустоту полей
-                Toast.makeText(this@SignActivity, "Не все поля заполнены", Toast.LENGTH_LONG).show()
-                return@setOnClickListener // АЛЯРМ, ГАЛЯЯЯ, АТМЕНА.
+                Toast.makeText(this@SignActivity, "Не все поля заполнены.", Toast.LENGTH_LONG).show()
+                return@setOnClickListener // Галя, ключ принеси
             }
             if (!edSignEmail.text.contains("@")){ // Проверка на наличие символа @ (поле - Email)
-                Toast.makeText(this@SignActivity, "Почта написана через очко", Toast.LENGTH_LONG).show()
-                return@setOnClickListener // ГАЛЯ, АТМЕНА!!!
+                Toast.makeText(this@SignActivity, "Ошибка в написании почты.", Toast.LENGTH_LONG).show()
+                return@setOnClickListener // аля, отмена.
             }
             val user = ProfileClass(edSignEmail.text.toString(), edSignPass.text.toString(), "", "0", "") // Создали класс и парсим его
             val request = retrofitServices.login(user).enqueue(object: Callback<ResponseBody> {
@@ -52,8 +52,8 @@ class SignActivity : AppCompatActivity() {
                     response: Response<ResponseBody>
                 ) {
                     // Log.e("Алярм", response.body()!!.string()) // Вывод ошибки в Logcat
-                    if (response.code() == 400) {
-                        Toast.makeText(this@SignActivity, "Хуйня кароче", Toast.LENGTH_LONG).show()
+                    if (response.code() == 400) { // Если проишла 400 ошибка
+                        Toast.makeText(this@SignActivity, "Неверный логин или пароль", Toast.LENGTH_LONG).show()
                     } else {
                         token = JSONObject(response.body()!!.string()).getString("token")
                         prefs.edit().putString("token", token).apply() // Сохраняем токен
@@ -65,7 +65,7 @@ class SignActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                    Toast.makeText(this@SignActivity, "Ошибка входа", Toast.LENGTH_LONG).show() // Вывод ошибки
+                    Toast.makeText(this@SignActivity, "Ошибка входа.", Toast.LENGTH_LONG).show() // Вывод ошибки
                     Log.e("Алярм", t.message.toString()) // Вывод ошибки в Logcat
                 }
             })
