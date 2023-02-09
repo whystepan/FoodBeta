@@ -41,4 +41,14 @@ interface RetrofitServices {
         @Query("item_id") id: Int,
         @Query("user_token") token: Int
     ): Call<ResponseBody>
+
+    @POST("add_to_order")
+    fun addorder(
+        @Body order : OrderClass
+    ): Call<ResponseBody>
+
+    @GET("order/{user_token}")
+    fun getorders(
+        @Path("user_token") token: Int
+    ): Call<ArrayList<CartClass>>
 }

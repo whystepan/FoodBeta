@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.ProfileActivity">
+
+    <TextView
+        android:id="@+id/ProfileText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:fontFamily="@font/light"
+        android:text="Мой профиль"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="46dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_exitleft" />
+
+    <TextView
+        android:id="@+id/tvOrders"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/btnshape"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/light"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:text="Заказы"
+        android:textColor="@color/bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileText" />
+
+    <TextView
+        android:id="@+id/tvCart"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btnshape"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/light"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:text="Корзина"
+        android:textColor="@color/bg"
+        app:layout_constraintEnd_toEndOf="@+id/tvOrders"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvOrders"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrders" />
+
+    <TextView
+        android:id="@+id/tvExit"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="46dp"
+        android:background="@drawable/btnshape"
+        android:backgroundTint="@color/exit"
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+        android:text="Выйти из акича"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSave"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/btnshape"
+        android:backgroundTint="@color/shpurp"
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/tvExit"
+        app:layout_constraintEnd_toEndOf="@+id/tvExit"
+        app:layout_constraintStart_toStartOf="@+id/tvExit" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOrders"
+        app:layout_constraintEnd_toEndOf="@+id/tvOrders"
+        app:layout_constraintTop_toTopOf="@+id/tvOrders"
+        app:srcCompat="@drawable/rightblack" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCart"
+        app:layout_constraintEnd_toEndOf="@+id/tvCart"
+        app:layout_constraintTop_toTopOf="@+id/tvCart"
+        app:srcCompat="@drawable/rightblack" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".UI.OrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".UI.MyProfileActivity"
             android:exported="false" />
         <activity

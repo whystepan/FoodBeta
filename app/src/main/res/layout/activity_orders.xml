@@ -4,56 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.CartActivity">
+    tools:context=".UI.OrdersActivity">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="48dp"
         android:fontFamily="@font/light"
-        android:text="Корзина"
-        android:textColor="@color/shgray"
-        android:textSize="16sp"
+        android:text="Мои заказы"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imLeftCart"
+        android:id="@+id/imExitOrders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="34dp"
         android:layout_marginTop="46dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_exitleft" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rViewCart"
+        android:id="@+id/rViewOrders"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="34dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/tvCartActivity"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/btnshape"
-        android:backgroundTint="@color/shpurp"
-        android:fontFamily="@font/bold"
-        android:gravity="center"
-        android:text="Заказать"
-        app:layout_constraintEnd_toEndOf="@+id/rViewCart"
-        app:layout_constraintStart_toStartOf="@+id/rViewCart"
-        app:layout_constraintTop_toBottomOf="@+id/rViewCart" />
-
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        app:layout_constraintVertical_bias="0.56" />
 </androidx.constraintlayout.widget.ConstraintLayout>

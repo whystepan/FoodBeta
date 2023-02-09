@@ -1,5 +1,6 @@
 package com.example.test.UI
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -18,9 +19,11 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     private lateinit var imCart: ImageView
+    private lateinit var imProfile: ImageView
     private var dishes: ArrayList<DishesClass> = ArrayList()
     private var rViewMain: RecyclerView? = null
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         imCart = findViewById(R.id.imCart)
         rViewMain = findViewById(R.id.rViewMain)
+        imProfile = findViewById(R.id.imProfile)
 
         val imExit: ImageView = findViewById(R.id.imExit)
         val prefs = getSharedPreferences("token", Context.MODE_PRIVATE)
@@ -37,6 +41,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, LaunchActivity::class.java)
             startActivity(intent)
             this@MainActivity.finish()
+        }
+
+        imProfile.setOnClickListener {
+            val intent = Intent(this@MainActivity, ProfileActivity::class.java)
+            intent.putExtra("token", intent.getStringExtra("token"))
+            startActivity(intent)
+            this@MainActivity.onPause() //?
         }
 
         imCart.setOnClickListener{

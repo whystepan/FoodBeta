@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.test.*
@@ -19,6 +21,7 @@ class CartActivity : AppCompatActivity() {
 
     private lateinit var imLeftCart: ImageView // Иконка для выхода
     private var rViewCart: RecyclerView? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,19 +38,45 @@ class CartActivity : AppCompatActivity() {
             startActivity(intent)
             this@CartActivity.finish()
         }
-
         val retrofitServices: RetrofitServices =
             RetrofitClient.getClient("http://79.137.206.73/") // API Сервер
                 .create(RetrofitServices::class.java)
 
         val prefs = getSharedPreferences("token", Context.MODE_PRIVATE)
         Log.e("Алярм", prefs.getString("token", "")!!)
+
+        val tvCartActivity: TextView = findViewById(R.id.tvCartActivity)
+        tvCartActivity.setOnClickListener {
+            var orderArray: IntArray = intArrayOf()
+            for (dish in CartArray.cart) {
+                orderArray += dish.id
+            }
+            val response =
+                retrofitServices.addorder(OrderClass(prefs.getString("token", "")!!.toInt(), orderArray))
+                    .enqueue(object : Callback<ResponseBody> {
+                        override fun onResponse(
+                            call: Call<ResponseBody>,
+                            response: Response<ResponseBody>
+                        ) {
+                            CartArray.cart.clear()
+                            updateRecyclerView(CartArray.cart)
+                            Toast.makeText(this@CartActivity, "заказ съели", Toast.LENGTH_LONG).show()
+                        }
+
+                        override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                            Log.e("Алярм", t.message.toString())
+                        }
+
+                    })
+        }
+
         val response = retrofitServices.getcart(prefs.getString("token", "")!!.toInt())
             .enqueue(object : Callback<ArrayList<CartClass>> {
                 override fun onResponse(
                     call: Call<ArrayList<CartClass>>,
                     response: Response<ArrayList<CartClass>>
                 ) {
+                    CartArray.cart = response.body()!!
                     updateRecyclerView(response.body()!!)
                 }
 

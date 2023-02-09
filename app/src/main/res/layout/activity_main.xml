@@ -103,6 +103,16 @@
         android:layout_marginTop="46dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_exit" />
+        app:srcCompat="@drawable/exitt" />
+
+    <ImageView
+        android:id="@+id/imProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/searchMain"
+        app:layout_constraintEnd_toStartOf="@+id/imCart"
+        app:layout_constraintStart_toEndOf="@+id/imExit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user_circle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
