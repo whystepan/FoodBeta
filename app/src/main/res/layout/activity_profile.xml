@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imExitProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -73,24 +73,10 @@
         android:backgroundTint="@color/exit"
         android:fontFamily="@font/bold"
         android:gravity="center"
-        android:text="Выйти из акича"
+        android:text="Выход из аккаунта"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvSave"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/btnshape"
-        android:backgroundTint="@color/shpurp"
-        android:fontFamily="@font/bold"
-        android:gravity="center"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/tvExit"
-        app:layout_constraintEnd_toEndOf="@+id/tvExit"
-        app:layout_constraintStart_toStartOf="@+id/tvExit" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -111,4 +97,31 @@
         app:layout_constraintEnd_toEndOf="@+id/tvCart"
         app:layout_constraintTop_toTopOf="@+id/tvCart"
         app:srcCompat="@drawable/rightblack" />
+
+    <TextView
+        android:id="@+id/tvSupport"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btnshape"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/light"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:text="Поддержка"
+        android:textColor="@color/bg"
+        app:layout_constraintEnd_toEndOf="@+id/tvCart"
+        app:layout_constraintStart_toStartOf="@+id/tvCart"
+        app:layout_constraintTop_toBottomOf="@+id/tvCart" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSupport"
+        app:layout_constraintEnd_toEndOf="@+id/tvSupport"
+        app:layout_constraintTop_toTopOf="@+id/tvSupport"
+        app:srcCompat="@drawable/rightblack" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

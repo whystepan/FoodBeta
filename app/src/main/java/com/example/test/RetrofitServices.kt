@@ -51,4 +51,9 @@ interface RetrofitServices {
     fun getorders(
         @Path("user_token") token: Int
     ): Call<ArrayList<CartClass>>
+
+    @DELETE("delete_from_order")
+    fun delorder(
+        @Query("user_token") id: Int,
+    ): Call<ResponseBody>
 }

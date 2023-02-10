@@ -49,7 +49,7 @@ class CartActivity : AppCompatActivity() {
         tvCartActivity.setOnClickListener {
             var orderArray: IntArray = intArrayOf()
             for (dish in CartArray.cart) {
-                orderArray += dish.id
+                orderArray += dish.dishId
             }
             val response =
                 retrofitServices.addorder(OrderClass(prefs.getString("token", "")!!.toInt(), orderArray))
@@ -60,7 +60,7 @@ class CartActivity : AppCompatActivity() {
                         ) {
                             CartArray.cart.clear()
                             updateRecyclerView(CartArray.cart)
-                            Toast.makeText(this@CartActivity, "заказ съели", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@CartActivity, "Заказ оформлен", Toast.LENGTH_LONG).show()
                         }
 
                         override fun onFailure(call: Call<ResponseBody>, t: Throwable) {

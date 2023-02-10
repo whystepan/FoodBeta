@@ -2,14 +2,17 @@ package com.example.test
 
 import CartClass
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.test.UI.DishActivity
+import com.example.test.UI.OrdersActivity
 import com.squareup.picasso.Picasso
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -30,6 +33,13 @@ class RecyclerCartAdapter(private val cart: ArrayList<CartClass>): RecyclerView.
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.cart_item, parent, false)
         val imCartDel: ImageView = cartItemView.findViewById(R.id.imCartDel)
+       // Log.e("Алярм", parent.context::class.java.toString())
+       // Log.e("Алярм", OrdersActivity::class.java.toString())
+        if (imCartDel.context::class.java == OrdersActivity::class.java){
+            imCartDel.visibility = View.GONE
+        } else {
+            imCartDel.visibility = View.VISIBLE
+        }
         imCartDel.setOnClickListener{
             val retrofitServices: RetrofitServices =
                 RetrofitClient.getClient("http://79.137.206.73/") // API Сервер

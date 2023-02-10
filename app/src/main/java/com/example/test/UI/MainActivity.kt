@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, ProfileActivity::class.java)
             intent.putExtra("token", intent.getStringExtra("token"))
             startActivity(intent)
-            this@MainActivity.onPause() //?
+            this@MainActivity.onResume() //?
         }
 
         imCart.setOnClickListener{

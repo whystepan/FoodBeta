@@ -1,5 +1,6 @@
 package com.example.test.UI
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,13 +10,17 @@ import android.widget.TextView
 import com.example.test.R
 import com.example.test.RetrofitClient
 import com.example.test.RetrofitServices
+import org.w3c.dom.Text
 
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var tvExit: TextView// Иконка для выхода
     private lateinit var tvOrders: TextView
     private lateinit var tvCart: TextView
+    private lateinit var tvSupport: TextView
+    private lateinit var imExitProfile: ImageView
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -47,10 +52,19 @@ class ProfileActivity : AppCompatActivity() {
             this@ProfileActivity.finish()
         }
 
+        imExitProfile = findViewById(R.id.imExitProfile)
+        imExitProfile.setOnClickListener {
+                val intent = Intent(this@ProfileActivity, MainActivity::class.java)
+                startActivity(intent)
+                this@ProfileActivity.finish()
+            }
 
-
-
-
+        tvSupport = findViewById(R.id.tvSupport)
+        tvSupport.setOnClickListener {
+            val intent = Intent(this@ProfileActivity, MyProfileActivity::class.java)
+            startActivity(intent)
+            this@ProfileActivity.finish()
+        }
 
 
 
